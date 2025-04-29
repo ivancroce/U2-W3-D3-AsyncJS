@@ -13,27 +13,21 @@ const fetchBooks = () => {
         const col = document.createElement("div");
         col.className = "col-12 col-sm-6 col-md-4 col-lg-3 g-3";
 
-        col.innerHTML = `
-             <div class="card h-100">
-            <div class="card-img-top-container overflow-hidden" style="height: 400px;">
-              <img src="${book.img}" class="card-img-top w-100 h-100 object-fit-cover" alt="${book.title}">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title text-truncate">${book.title}</h5>
-              <p class="card-text mb-4">Prezzo: €${book.price}</p>
-              <div class="mt-auto">
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary add-to-cart-btn">
-                    <i class="bi bi-cart-plus me-1"></i>Add to Cart
-                  </button>
-                  <button class="btn btn-danger discard-btn">
-                    <i class="bi bi-x-square me-1"></i>Discard
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          `;
+        col.innerHTML = `<div class="card h-100 shadow-sm ">
+        <div class="overflow-hidden rounded-top" style="aspect-ratio: 2 / 3;">
+        <img src="${book.img}" class="w-100 h-100 object-fit-cover" alt="${book.title}">
+        </div>
+        <div class="card-body d-flex flex-column">
+        <h5 class="card-title text-truncate">${book.title}</h5>
+        <p class="card-text mb-4">Prezzo: €${book.price}</p>
+        <div class="mt-auto d-grid gap-2">
+        <button class="btn btn-primary add-to-cart-btn">
+        <i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+        <button class="btn btn-danger discard-btn">
+        <i class="bi bi-x-square me-1"></i>Discard</button>
+        </div>
+        </div>
+        </div>`;
 
         // discard-btn
         col.querySelector(".discard-btn").addEventListener("click", () => {
